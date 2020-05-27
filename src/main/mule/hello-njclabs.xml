@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="817e02a9-f7df-4102-a3b2-570c0c722c89" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="hello-njclabsFlow" doc:id="c3d2fd3e-fc51-4034-82d0-6cd24dfa731b" >
+		<http:listener doc:name="GET/hello" doc:id="03914225-68f9-4677-8f89-1034fbdeefed" config-ref="HTTP_Listener_config" path="/hello"/>
+		<set-payload value="Hello Welcome to NJC LAB using Mule" doc:name="Set Payload" doc:id="1f2d820a-f1a6-46b4-8585-f8ad9f30b7c9" />
+	</flow>
+</mule>
